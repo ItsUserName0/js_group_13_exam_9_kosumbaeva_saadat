@@ -1,0 +1,61 @@
+<form>
+  <div class="form-group row">
+    <label for="name" class="col-sm-2 col-form-label">Name</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" id="name" name="name">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="imageUrl" class="col-sm-2 col-form-label">Image URL</label>
+    <div class="col-sm-7">
+      <input type="text" class="form-control" id="imageUrl" name="imageUrl">
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-form-label col-sm-2">Type</label>
+    <div class="col-sm-7 form-inline">
+      <input class="form-check-input" id="alcoholCocktail" type="radio" name="type" value="alcohol-cocktail">
+      <label for="alcoholCocktail" class="col-form-label pl-1 mr-4">Alcohol cocktail</label>
+      <input class="form-check-input" id="mocktail" type="radio" name="type" value="mocktail">
+      <label for="mocktail" class="col-form-label pl-1">Mocktail</label>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="description" class="col-sm-2 col-form-label">Description</label>
+    <div class="col-sm-7">
+      <textarea class="form-control" id="description" name="description"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label class="col-sm-2 col-form-label">Ingredients</label>
+    <div class="col-sm-7">
+      <button type="button" class="btn btn-outline-info mb-3">Add</button>
+      <div class="row no-gutters justify-content-between">
+        <input type="text" class="form-control col-5 px-2" name="ingName" placeholder="Ing name">
+        <input type="number" class="form-control col-3 px-2" name="ingAmount" placeholder="Amount">
+        <select class="custom-select col-2 px-2" name="ingUnit">
+          <option value="ml">ml</option>
+          <option value="gr">gr</option>
+        </select>
+        <button type="button" class="btn btn-outline-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <label for="instructions" class="col-sm-2 col-form-label">Instructions</label>
+    <div class="col-sm-7">
+      <textarea class="form-control" id="instructions" name="instructions"></textarea>
+    </div>
+  </div>
+
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <button type="submit" class="btn btn-info">Save</button>
+    </div>
+  </div>
+</form>
