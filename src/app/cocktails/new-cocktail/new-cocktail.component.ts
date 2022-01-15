@@ -4,7 +4,6 @@ import { Cocktail } from '../../shared/cocktail.model';
 import { CocktailService } from '../../shared/cocktail.service';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { amountValidator } from '../../validate-amount.directive';
 import { imgUrlValidator } from '../../validate-imgUrl.directive';
 
 @Component({
@@ -57,7 +56,7 @@ export class NewCocktailComponent implements OnInit, OnDestroy {
     const ingredients = <FormArray>this.cocktailForm.get('ingredients');
     const ingredient = new FormGroup({
       ingName: new FormControl('', Validators.required),
-      ingAmount: new FormControl('', [Validators.required, amountValidator]),
+      ingAmount: new FormControl('', [Validators.required, Validators.min(0.1)]),
       ingUnit: new FormControl('', Validators.required),
     });
     ingredients.push(ingredient);

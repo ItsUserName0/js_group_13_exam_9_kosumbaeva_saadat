@@ -1,9 +1,12 @@
 <div class="row" *ngIf="cocktails">
   <ng-container *ngIf="!isFetching">
-    <app-cocktail *ngFor="let cocktail of cocktails" [cocktail]="cocktail"></app-cocktail>
+    <app-cocktail *ngFor="let cocktail of cocktails; let i = index" [cocktail]="cocktail"
+                  (click)="openModal(i)"></app-cocktail>
   </ng-container>
 </div>
 
 <div class="spinner-border" *ngIf="isFetching">
   <span class="sr-only">Loading...</span>
 </div>
+
+<app-cocktail-details [isOpen]="modalOpen" [cocktail]="currentCocktail" (close)="closeModal()"></app-cocktail-details>

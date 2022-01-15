@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Cocktail } from '../../shared/cocktail.model';
 
 @Component({
@@ -6,14 +6,8 @@ import { Cocktail } from '../../shared/cocktail.model';
   templateUrl: './cocktail.component.html',
   styleUrls: ['./cocktail.component.css']
 })
-export class CocktailComponent implements OnInit {
+export class CocktailComponent {
   @Input() cocktail!: Cocktail;
-
-  constructor() {
-  }
-
-  ngOnInit(): void {
-  }
 
   typeHandler() {
     const type = this.cocktail.type.split('-').join(' ');

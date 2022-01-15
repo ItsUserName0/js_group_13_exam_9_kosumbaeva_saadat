@@ -10,7 +10,6 @@ import { NewCocktailComponent } from './cocktails/new-cocktail/new-cocktail.comp
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ValidateAmountDirective } from './validate-amount.directive';
 import { ValidateImgUrlDirective } from './validate-imgUrl.directive';
 
 @NgModule({
@@ -21,7 +20,6 @@ import { ValidateImgUrlDirective } from './validate-imgUrl.directive';
     CocktailDetailsComponent,
     NewCocktailComponent,
     ToolbarComponent,
-    ValidateAmountDirective,
     ValidateImgUrlDirective,
   ],
   imports: [
