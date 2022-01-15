@@ -15,4 +15,9 @@ export class CocktailComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  typeHandler() {
+    const type = this.cocktail.type.split('-').join(' ');
+    return type[0].toUpperCase() + type.slice(1);
+  }
+
 }

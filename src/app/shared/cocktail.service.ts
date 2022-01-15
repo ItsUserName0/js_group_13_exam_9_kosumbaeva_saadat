@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Cocktail } from './cocktail.model';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +11,7 @@ export class CocktailService {
   cocktails: Cocktail[] = [];
   cocktailsChange = new Subject<Cocktail[]>();
   cocktailsFetching = new Subject<boolean>();
+  cocktailUploading = new Subject<boolean>();
 
   constructor(private http: HttpClient) {
   }
@@ -31,5 +32,24 @@ export class CocktailService {
     }, () => {
       this.cocktailsFetching.next(false);
     });
+  }
+
+  addCocktail(cocktail: Cocktail) {
+    const body = {
+      name: cocktail.name,
+      imageUrl: cocktail.imageUrl,
+      type: cocktail.type,
+      description: cocktail.description,
+      ingredients: cocktail.ingredients,
+      instructions: cocktail.instructions,
+    };
+    this.cocktailUploading.next(true);
+    return this.http.post('https://skosumbaeva2502-default-rtdb.firebaseio.com/cocktails.json', body).pipe(
+      tap(() => {
+        this.cocktailUploading.next(false);
+      }, () => {
+        this.cocktailUploading.next(false);
+      })
+    );
   }
 }

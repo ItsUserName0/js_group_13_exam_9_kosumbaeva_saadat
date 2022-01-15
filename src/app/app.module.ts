@@ -9,6 +9,9 @@ import { CocktailDetailsComponent } from './cocktails/cocktail-details/cocktail-
 import { NewCocktailComponent } from './cocktails/new-cocktail/new-cocktail.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ValidateAmountDirective } from './validate-amount.directive';
+import { ValidateImgUrlDirective } from './validate-imgUrl.directive';
 
 @NgModule({
   declarations: [
@@ -17,14 +20,18 @@ import { HttpClientModule } from '@angular/common/http';
     CocktailComponent,
     CocktailDetailsComponent,
     NewCocktailComponent,
-    ToolbarComponent
+    ToolbarComponent,
+    ValidateAmountDirective,
+    ValidateImgUrlDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
