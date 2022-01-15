@@ -1,9 +1,9 @@
 <div class="card mb-3 mr-3" style="width: 18rem;">
   <img
-    src="https://www.theflavorbender.com/wp-content/uploads/2017/07/Magical-Color-Changing-Cocktails-The-Flavor-Bender-Featured-Image-SQ-5.jpg"
-    class="card-img-top" alt="...">
+    [src]="cocktail.imageUrl"
+    class="card-img-top" [alt]="cocktail.name">
   <div class="card-body">
-    <h5 class="card-title">Cocktail name</h5>
-    <p class="card-text">Type:</p>
+    <h5 class="card-title">{{ cocktail.name }}</h5>
+    <p class="card-text"><strong>Type: </strong>{{ cocktail.type }}</p>
   </div>
 </div>

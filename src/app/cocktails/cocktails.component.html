@@ -1,6 +1,4 @@
-<div class="row">
-  <app-cocktail></app-cocktail>
-  <app-cocktail></app-cocktail>
-  <app-cocktail></app-cocktail>
+<div class="row" *ngIf="cocktails">
+  <app-cocktail *ngFor="let cocktail of cocktails" [cocktail]="cocktail"></app-cocktail>
 </div>
 

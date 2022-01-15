@@ -8,6 +8,7 @@ import { CocktailComponent } from './cocktails/cocktail/cocktail.component';
 import { CocktailDetailsComponent } from './cocktails/cocktail-details/cocktail-details.component';
 import { NewCocktailComponent } from './cocktails/new-cocktail/new-cocktail.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
